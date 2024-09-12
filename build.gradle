@@ -59,6 +59,9 @@ dependencies {
 
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.1.1'
 
+    //@Valid (자동 파라미터 수집의 유효성 검사)를 위해 필요한 라이브러리
+    implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.2.0.Final'
+
 }
 
 test {

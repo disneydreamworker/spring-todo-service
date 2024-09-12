@@ -1,6 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-</beans>
+<mapper namespace="com.ssg.springtodoservice.mapper.TodoMapper">
+    <!--namespace : TodoMapper 영역의 공간. scope-->
+    <!--TodoMapper의 getTime 메소드가 호출이 되면, select 구문을 실행한다.-->
+    <select id="getTime" resultType="string">
+        select now()
+    </select>
+
+    <!--id : 메소드 이름 -->
+    <!--(?) 파라미터 부분에 #{}로 입력 -->
+    <insert id="insert">insert into tbl_todo(title,dueDate,writer) values(#{title}, #{dueDate}, #{writer})</insert>
+</mapper>
